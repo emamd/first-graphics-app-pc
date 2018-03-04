@@ -8,3 +8,16 @@
     <time datetime="2018-03-10" pubdate>Mar. 10, 2018</time>
 {% endblock %}
 
+{% block content %}
+<div class="card-columns">
+    {% for obj in site.data.harvard_park_homicides %}
+    <div class="card">
+      {% if obj.image %}<img class="card-img-top" src="{{ obj.image }}">{% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ obj.first_name }} {{ obj.last_name }}</h5>
+        <p class="card-text">A {{ obj.age}}-year-old {{ obj.race }} {{ obj.gender }} died in {{ obj.death_year }}.</p>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
